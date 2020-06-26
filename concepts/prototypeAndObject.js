@@ -73,3 +73,36 @@ var myFunc = Student("Nada")
 console.log(myFunc)
 myFunc("Welcome ") //Output: Welcome Nada
 myFunc("Hello ") //output: Hello Nada
+
+
+var myCar = new Object()
+myCar.make = 'Ford'
+myCar.model = 'Mustang'
+myCar.year = 1969
+console.log(myCar)
+/*
+OR: using object-initializer
+And the object property can be another object with its own properties.
+*/
+var myCar2 = {
+    make: 'Ford',
+    model: 'Mustang',
+    date: {year:1969,month: 02,day:12}
+}
+console.log(myCar2)
+
+// Setter And Getter 
+var myObject = {
+    num: 7,
+    get getNum() { 
+      return this.num + 1
+    },
+    set setNum(x) {
+      this.num = x / 2
+    }
+  }
+  
+  console.log(myObject.num); // 7
+  console.log(myObject.getNum); // 8
+  myObject.setNum = 50; 
+  console.log(myObject.num); // 25
