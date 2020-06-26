@@ -29,8 +29,10 @@ function BookPrototype(title, author) {
 }
 
 var newBook = new BookPrototype("The power of now", "Eckhart")
-BookPrototype.prototype.nationality = "English";
 console.log(newBook.getDetails())
+// Adding new proparty
+BookPrototype.prototype.nationality = "English"
+console.log(newBook.nationality)
 console.log(newBook.__proto__ === BookPrototype.prototype)// true
 
 
