@@ -1,18 +1,11 @@
 const fs = require("fs")
 fs.writeFileSync("note.txt", "This is Nada");
-fs.appendFileSync("note.txt", ", I'm excited to begin this challenging journey!")
-
-const utils = require("./utils")
-const sum = utils.add(2, 2)
-console.log("My name is " + utils.name + ", 2+2 equal: " + sum)//reem
+fs.appendFileSync("note.txt", ", I'm excited to begin this journey!")
 
 const notes = require("./note")
 const validator = require("validator")
 console.log("Is email valid? " + validator.isEmail("nada@hotmail.com") + ", is URL valid: " + validator.isURL("google"))
-
-const chalk = require("chalk")
-console.log(chalk.red.underline("you are", chalk.bold("Success!"), chalk.inverse("Nada")))
-
+//-----------------------------
 
 const yargs = require("yargs");
 const { title } = require("process");

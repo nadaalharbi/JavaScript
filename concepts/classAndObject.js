@@ -17,7 +17,7 @@ var greeting = "Welcome to blog";
 //to have a limited acces var (local)
 (function () {
     var greeting = "Hello"
-    console.log(greeting) 
+    console.log(greeting)
     /* Output: Welcome to blog if there's no local variable 
     Otherwise it will take the local var. Output: Hello
     */
@@ -47,22 +47,22 @@ And the object property can be another object with its own properties.
 var myCar2 = {
     make: 'Ford',
     model: 'Mustang',
-    date: {year:1969,month: 02,day:12}
+    date: { year: 1969, month: 02, day: 12 }
 }
 console.log(myCar2)
 
 // Setter And Getter 
 var myObject = {
     num: 7,
-    get getNum() { 
-      return this.num + 1
+    get getNum() {
+        return this.num + 1
     },
     set setNum(x) {
-      this.num = x / 2
+        this.num = x / 2
     }
-  }
-  
-  console.log(myObject.num); // 7
-  console.log(myObject.getNum); // 8
-  myObject.setNum = 50; 
-  console.log(myObject.num); // 25
+}
+
+console.log(myObject.num); // 7
+console.log(myObject.getNum); // 8
+myObject.setNum = 50;
+console.log(myObject.num); // 25

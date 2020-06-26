@@ -4,24 +4,24 @@ Then the .then handler is called
 The value that it returns is passed to the next .then handler ...and SO ON..
 */
 
-let chainedPromise = new Promise(function(resolve, reject) {
-    setTimeout(() => resolve(1), 1000)
-  })
-  
-  chainedPromise.then(function(result) {
-    console.log(result) // 1
-    return result * 2
-  })
-  
-  chainedPromise.then(function(result) {
-    console.log(result) // 1
-    return result * 2
-  })
-  
-  chainedPromise.then(function(result) {
-    console.log(result) // 1
-    return result * 2
-  })
+let chainedPromise = new Promise(function (resolve, reject) {
+  setTimeout(() => resolve(1), 1000)
+})
+
+chainedPromise.then(function (result) {
+  console.log(result) // 1
+  return result * 2
+})
+
+chainedPromise.then(function (result) {
+  console.log(result) // 1
+  return result * 2
+})
+
+chainedPromise.then(function (result) {
+  console.log(result) // 1
+  return result * 2
+})
 
 // ---------------------------
 //Promise.all(array): is when single promise fulfills and all of the promises passed as an iterable have been fulfilled too.
