@@ -52,6 +52,7 @@ console.log(user1)
 
 // Golobal scoping 
 var greeting = "Welcome to blog";
+
 //IIFE (Immediately Invoked Function Expression)
 //to have a limited acces var (local)
 (function () {
