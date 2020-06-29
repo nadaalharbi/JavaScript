@@ -1,15 +1,24 @@
 const fs = require("fs")
-fs.writeFileSync("note.txt", "This is Nada");
+fs.writeFileSync("note.txt", "This is Nada")
 fs.appendFileSync("note.txt", ", I'm excited to begin this journey!")
 
 const notes = require("./note")
 const validator = require("validator")
-console.log("Is email valid? " + validator.isEmail("nada@hotmail.com") + ", is URL valid: " + validator.isURL("google"))
+
 //-----------------------------
 
 const yargs = require("yargs");
 const { title } = require("process");
+const { default: chalk } = require("chalk")
 yargs.version("1.1.0")
+
+console.log(chalk.bold("Commands Menu: \n")
++"add:     Add a new note \n" +
+"remove:  Remove a note \n"+
+"list:    List all note \n" +
+"read:    Read a note")
+
+
 yargs.command({
     command: 'add',
     describe: "Add a new note",
@@ -26,9 +35,6 @@ yargs.command({
         }
     },
     handler: (argv) => notes.addNote(argv.title, argv.body)
-    // console.log("Adding a new note successfuly!")
-    // console.log("Title: " + argv.title)
-    // console.log("Body: " + argv.body)
 })
 
 yargs.command({
@@ -64,4 +70,3 @@ yargs.command({
     }
 })
 yargs.parse()//OR: console.log(yargs.argv)
-

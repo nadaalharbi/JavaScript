@@ -10,10 +10,10 @@ const addNote = (title, body) => {
     const notes = loadNotes()
     // 2- Check if the note is duplicated(already exist)
     //const duplicateNotes = notes.filter((note) => note.title === title)
-    // More effecient, once it found in stop searching
+    // More effecient, once it found it stop searching
     const duplicateNotes = notes.find((note) => note.title === title)
 
-    // 3- if return - then it not duplicated, so push the new notes(title and body) to the array
+    // 3- if return true - then it's not duplicated, so push the new notes(title and body) to the array
     if (!duplicateNotes) {
         notes.push({
             title: title,
@@ -52,6 +52,7 @@ const listNotes = () => {
     console.log(chalk.yellowBright.inverse("Your Notes: "))
     notes.forEach((note) => {
         console.log(note.title)
+
     })
 }
 
@@ -69,9 +70,9 @@ const readNote = (title) => {
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync("notes.json")
-        const dataJSON = dataBuffer.toString()
-        return JSON.parse(dataJSON)
+        const dataBuffer = fs.readFileSync("notes.json").toString()
+       // const dataJSON = dataBuffer.toString()
+        return JSON.parse(dataBuffer)
     } catch (error) {
         //if the file notes.json not found return an empty array
         return []
@@ -79,7 +80,7 @@ const loadNotes = () => {
 }
 
 const saveNote = (notes) => {
-    // stringify() takes a string(array) and convert it to JSON Obj
+    // stringify() takes an array of string and convert it to JSON Obj to be stored back to json file
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync("notes.json", dataJSON)
     console.log("Note saved successfuly!")
