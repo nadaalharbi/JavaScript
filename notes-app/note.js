@@ -1,4 +1,3 @@
-const { get } = require("http")
 const fs = require("fs")
 const { default: chalk } = require("chalk")
 
