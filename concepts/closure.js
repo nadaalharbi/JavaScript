@@ -5,25 +5,25 @@ before being executed.(if not exist an inner variable to use)
 */
 
 function closure() {
-    var name = "Nada"
+    const name = 'Nada';
     function displayName() {
-        //var name = "Omar"
-        console.log(name)
+        //const name = 'Omar';
+        console.log(name);
     }
-    return displayName
+    return displayName;
 }
-var myClosure = closure()
-myClosure()
+const myClosure = closure();
+myClosure();
 
 
-var e = 10 // global scope
+const e = 10; // global scope
 function sum(a) {
     return function (b) {
         return function (c) {
             // outer functions scope
             return function (d) {
                 // local scope
-                var e = 20
+                const e = 20;
                 return a + b + c + d + e;
             }
         }

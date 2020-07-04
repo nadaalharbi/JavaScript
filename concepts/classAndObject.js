@@ -6,53 +6,53 @@ class User {
     }
 }
 // Creating Object
-var user1 = new User("Nada", 111)
-console.log(user1)
+const user1 = new User('Nada', 111);
+console.log(user1);
 
 
 // Golobal scoping 
-var greeting = "Welcome to blog";
+const greeting = 'Welcome to blog';
 
 //IIFE (Immediately Invoked Function Expression)
-//to have a limited acces var (local)
+//to have a limited acces const (local)
 (function () {
-    var greeting = "Hello"
-    console.log(greeting)
+    const greeting = 'Hello';
+    console.log(greeting);
     /* Output: Welcome to blog if there's no local variable 
-    Otherwise it will take the local var. Output: Hello
+    Otherwise it will take the local const. Output: Hello
     */
 })()
 
 function Student(name) {
-    var displayName = function (greeting) {
-        console.log(greeting + " " + name)
+    const displayName = function (greeting) {
+        console.log(greeting + ' ' + name);
     }
-    return displayName
+    return displayName;
 }
-var myFunc = Student("Nada")
-console.log(myFunc)
-myFunc("Welcome ") //Output: Welcome Nada
-myFunc("Hello ") //output: Hello Nada
+const myFunc = Student('Nada');
+console.log(myFunc);
+myFunc('Welcome '); //Output: Welcome Nada
+myFunc('Hello '); //output: Hello Nada
 
 
-var myCar = new Object()
-myCar.make = 'Ford'
-myCar.model = 'Mustang'
-myCar.year = 1969
-console.log(myCar)
+const myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;
+console.log(myCar);
 /*
 OR: using object-initializer
 And the object property can be another object with its own properties.
 */
-var myCar2 = {
+const myCar2 = {
     make: 'Ford',
     model: 'Mustang',
     date: { year: 1969, month: 02, day: 12 }
 }
-console.log(myCar2)
+console.log(myCar2);
 
 // Setter And Getter 
-var myObject = {
+const myObject = {
     num: 7,
     get getNum() {
         return this.num + 1
